@@ -1,0 +1,13 @@
+.home {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeTitle {
+  font-size: 48px;
+  /* color: rgb(81, 79, 79); */
+  text-shadow: 1px 1px 2px red, 0 0 1em rgb(233, 135, 8), 0 0 0.2em rgb(228, 142, 13);
+}

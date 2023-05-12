@@ -7,9 +7,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 1440px;
+  background-color: rgb(46, 65, 174);
+  margin: 0 auto;
+  border: 2px solid tomato;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.active {
+  color: rgb(238, 11, 11);
+  /* font-size: 24px; */
+  font-weight: 700;
+  /* text-decoration: underline; */
 }

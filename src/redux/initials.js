@@ -6,3 +6,10 @@ export const initialTestContacts = {
     filter: '',
   },
 };
+
+export const initialStateBackend = {
+  token: '',
+  isLoading: false,
+  error: null,
+  user: null,
+};

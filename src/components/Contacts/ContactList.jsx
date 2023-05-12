@@ -15,6 +15,7 @@ export default function ContactList() {
   }, [dispatch]);
 
   const contactsList = useSelector(selectContacts);
+  console.log(contactsList)
   const filteredContacts = useSelector(selectFilter);
 
   const delContact = id => {

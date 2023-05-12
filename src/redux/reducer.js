@@ -53,18 +53,12 @@ const testSlice = createSlice({
       .addCase(deleteContactsThunk.fulfilled, handleFulfilledDelete)
       .addMatcher(
         isAnyOf(
-          // getContactsThunk.pending,
-          // createContactsThunk.pending,
-          // deleteContactsThunk.pending,
           ...caseType('pending')
         ),
         handlePending
       )
       .addMatcher(
         isAnyOf(
-          // getContactsThunk.rejected,
-          // createContactsThunk.rejected,
-          // deleteContactsThunk.rejected,
           ...caseType('rejected')
         ),
         handleRejected

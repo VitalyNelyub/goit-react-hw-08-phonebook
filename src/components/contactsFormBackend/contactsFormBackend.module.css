@@ -1,0 +1,12 @@
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
