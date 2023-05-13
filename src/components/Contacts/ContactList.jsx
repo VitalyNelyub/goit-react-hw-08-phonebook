@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts, selectFilter } from 'redux/selectors';
 import { useEffect } from 'react';
 import { deleteContactsThunk, getContactsThunk } from 'redux/thunks';
-// import { deleteContactsThunk, getContactsThunk } from 'redux/thunks';
+
 
 
 export default function ContactList() {

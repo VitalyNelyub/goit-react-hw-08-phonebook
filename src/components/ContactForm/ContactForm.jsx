@@ -1,6 +1,5 @@
 import { Report } from 'notiflix/build/notiflix-report-aio';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { nanoid } from 'nanoid';
 import css from '../ContactForm/ContactForm.module.css';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,12 +8,9 @@ import { createContactsThunk } from 'redux/thunks';
 
 
 
-// const NOW = new Date();
-
 export default function ContactForm() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
-  console.log(contacts)
 
   const addContactBtn = e => {
     e.preventDefault();

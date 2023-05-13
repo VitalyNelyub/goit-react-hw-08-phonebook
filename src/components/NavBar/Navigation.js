@@ -6,7 +6,6 @@ import { selectCurrentUser } from 'redux/selectors';
 import { useEffect } from 'react';
 import { currentUserThunk } from 'redux/auth/thunk';
 import { logOut } from 'redux/auth/slice';
-import { removeToken } from 'service/fetchBackend';
 import UserMenu from 'components/UserMenu/UserMenu';
 
 export default function Navigation() {
@@ -17,7 +16,6 @@ export default function Navigation() {
 
   const handleLogOut = () => {
     dispatch(logOut());
-    // removeToken();
   };
 
   useEffect(() => {

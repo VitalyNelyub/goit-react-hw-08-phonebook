@@ -2,7 +2,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import css from '../Contacts/ContactList.module.css';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectContacts, selectFilter } from 'redux/selectors';
+import {  selectFilter } from 'redux/selectors';
 import { useEffect } from 'react';
 import { deleteContactsThunk, getContactsThunk } from 'redux/thunks';
 

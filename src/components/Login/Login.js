@@ -3,22 +3,13 @@ import css from './Login.module.css';
 import { currentUserThunk, loginThunk } from 'redux/auth/thunk';
 import { selectisLogin } from 'redux/selectors';
 import { useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import { getCurrentUser } from 'service/fetchBackend';
+
 
 export default function Login() {
   const isLogin = useSelector(selectisLogin);
-  console.log(isLogin);
 
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   if (isLogin === '') {
-  //     return;
-  //   } else {
-  //     dispatch(currentUserThunk());
-  //   }
-  // }, [dispatch, isLogin]);
   useEffect(() => {
     dispatch(currentUserThunk());
   }, [dispatch, isLogin]);
@@ -29,13 +20,11 @@ export default function Login() {
       email: e.target.email.value,
       password: e.target.password.value,
     };
-    // loginUser(loginCurrentUser).then(console.log)
+
     dispatch(loginThunk(loginCurrentUser));
     dispatch(currentUserThunk());
     e.target.email.value = '';
     e.target.password.value = '';
-    // dispatch(currentUserThunk());
-    // console.log(newUser);
   };
 
   return (
