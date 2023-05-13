@@ -1,29 +1,33 @@
 // import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const BASE_URL_API = 'https://connections-api.herokuapp.com';
+// const BASE_URL_API = 'https://connections-api.herokuapp.com';
+const axiosApi = axios.create({
+  baseURL: 'https://connections-api.herokuapp.com',
+});
+// const testAxiosApi = axios.create ({baseURL: 'https://connections-api.herokuapp.com'});
 
 const addToken = token => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  axiosApi.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 export const removeToken = () => {
-  axios.defaults.headers.common.Authorization = '';
+  axiosApi.defaults.headers.common.Authorization = '';
 };
 
 export const createNewUser = async newUser => {
-  const user = await axios.post(`${BASE_URL_API}/users/signup`, newUser);
+  const user = await axiosApi.post(`/users/signup`, newUser);
   addToken(user.data.token);
   // console.log(user.token)
   return user;
 };
 
-export const getCurrentUser = async (token) => {
+export const getCurrentUser = async token => {
   try {
     addToken(token);
-    const currentUser = await axios.get(`${BASE_URL_API}/users/current`);
-    // console.log(data);
-
+    console.log(token);
+    const currentUser = await axiosApi.get('/users/current');
+    console.log(currentUser);
     return currentUser.data;
   } catch (error) {
     return;
@@ -31,28 +35,34 @@ export const getCurrentUser = async (token) => {
 };
 
 export const loginUser = async user => {
-  const loginedUser = await axios.post(`${BASE_URL_API}/users/login`, user);
+  const loginedUser = await axiosApi.post(`/users/login`, user);
   addToken(loginedUser.data.token);
   // console.log(loginedUser.data.token);
   return loginedUser.data;
 };
 
 export const logOut = async user => {
-  const logOutUser = await axios.post(`${BASE_URL_API}/users/logout`, user);
+  const logOutUser = await axiosApi.post(`/users/logout`, user);
   removeToken(logOutUser.data.token);
   console.log(logOutUser.data.token);
   return logOutUser.data;
 };
 
-// export const register = createAsyncThunk(
-//   'auth/register',
-//   async (credentials, thunkAPI) => {
-//     try {
-//       const res = await axios.post('/users/signup', credentials);
-//       setAuthHeader(res.data.token);
-//       return res.data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const getContactsApi = async token => {
+  addToken(token);
+  const contacts = await axiosApi.get('/contacts');
+  // console.log(contacts.data);
+  // const contacts = await axios.get(`${testAxiosApi}/contacts`);
+  return contacts.data;
+};
+
+export const createContactsApi = async (contact, token) => {
+  addToken(token);
+  const contacts = await axiosApi.post(`/contacts`, contact);
+  return contacts.data;
+};
+
+export const deleteContactsApi = async id => {
+  const result = await axiosApi.delete(`/contacts/${id}`);
+  return result.data.id;
+};

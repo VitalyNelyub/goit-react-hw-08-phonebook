@@ -17,7 +17,7 @@ export default function Navigation() {
 
   const handleLogOut = () => {
     dispatch(logOut());
-    removeToken();
+    // removeToken();
   };
 
   useEffect(() => {

@@ -9,19 +9,18 @@ import { createContactsThunk } from 'redux/thunks';
 
 
 
-const NOW = new Date();
+// const NOW = new Date();
 
 export default function ContactForm() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
+  console.log(contacts)
 
   const addContactBtn = e => {
     e.preventDefault();
     const newContact = {
       name: e.target.name.value,
-      phone: e.target.number.value,
-      id: nanoid(),
-      createdAt: `${NOW}`,
+      number: e.target.number.value,
     };
     if (contacts.find(contact => contact.name === newContact.name)) {
       Report.failure('Attention', 'This contact is in your phonebook', 'Okay');

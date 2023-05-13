@@ -14,7 +14,8 @@ export default function ContactList() {
     dispatch(getContactsThunk());
   }, [dispatch]);
 
-  const contactsList = useSelector(selectContacts);
+  const contactsList = useSelector(state => state.contacts.contacts.items);
+  // console.log(contactsList)
   const filteredContacts = useSelector(selectFilter);
 
   const delContact = id => {
@@ -36,8 +37,8 @@ export default function ContactList() {
           height={40}
         />
         <p>{contact.name}:</p>
-        <span>{contact.phone.substr(0, 12)}</span>
-        <p>{contact.createdAt.substr(0, 7)}</p>
+        <span>{contact.number.substr(0, 12)}</span>
+        {/* <p>{contact.createdAt.substr(0, 7)}</p> */}
         <button
           type="button"
           onClick={() => delContact(contact.id)}

@@ -8,17 +8,20 @@ import { useEffect } from 'react';
 
 export default function Login() {
   const isLogin = useSelector(selectisLogin);
+  console.log(isLogin);
 
-  // console.log(isLogin);
   const dispatch = useDispatch();
 
   // useEffect(() => {
-  //   if (isLogin) {
-  //     // currentUserThunk();
+  //   if (isLogin === '') {
+  //     return;
+  //   } else {
   //     dispatch(currentUserThunk());
   //   }
-  //   // isLogin && dispatch(currentUserThunk());
   // }, [dispatch, isLogin]);
+  useEffect(() => {
+    dispatch(currentUserThunk());
+  }, [dispatch, isLogin]);
 
   const handleSubmitLogin = e => {
     e.preventDefault();

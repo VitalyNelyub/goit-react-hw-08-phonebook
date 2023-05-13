@@ -11,6 +11,7 @@ const handlePending = state => {
 };
 
 const handleFulfilledGet = (state, action) => {
+  // console.log(action.payload)
   state.contacts.isLoading = false;
   state.contacts.items = action.payload;
   state.contacts.error = '';
@@ -32,7 +33,7 @@ const handleFulfilledDelete = (state, action) => {
 
 const handleRejected = (state, action) => {
   state.contacts.isLoading = false;
-  state.contacts.error = action.payload.message;
+  state.contacts.error = action.payload;
 };
 
 const responseArray = [
