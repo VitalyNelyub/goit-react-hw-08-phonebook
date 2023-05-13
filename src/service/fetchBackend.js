@@ -18,10 +18,12 @@ export const createNewUser = async newUser => {
   return user;
 };
 
-export const getCurrentUser = async () => {
+export const getCurrentUser = async (token) => {
   try {
+    addToken(token);
     const currentUser = await axios.get(`${BASE_URL_API}/users/current`);
     // console.log(data);
+
     return currentUser.data;
   } catch (error) {
     return;

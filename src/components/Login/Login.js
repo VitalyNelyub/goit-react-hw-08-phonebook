@@ -12,13 +12,13 @@ export default function Login() {
   // console.log(isLogin);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (isLogin) {
-      // currentUserThunk();
-      dispatch(currentUserThunk());
-    }
-    // isLogin && dispatch(currentUserThunk());
-  }, [dispatch, isLogin]);
+  // useEffect(() => {
+  //   if (isLogin) {
+  //     // currentUserThunk();
+  //     dispatch(currentUserThunk());
+  //   }
+  //   // isLogin && dispatch(currentUserThunk());
+  // }, [dispatch, isLogin]);
 
   const handleSubmitLogin = e => {
     e.preventDefault();
@@ -28,7 +28,7 @@ export default function Login() {
     };
     // loginUser(loginCurrentUser).then(console.log)
     dispatch(loginThunk(loginCurrentUser));
-    // dispatch(currentUserThunk());
+    dispatch(currentUserThunk());
     e.target.email.value = '';
     e.target.password.value = '';
     // dispatch(currentUserThunk());

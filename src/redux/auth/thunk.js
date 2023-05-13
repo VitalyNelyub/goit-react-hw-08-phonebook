@@ -5,6 +5,7 @@ export const loginThunk = createAsyncThunk('auth/login', async user => {
   return await loginUser(user);
 });
 
-export const currentUserThunk = createAsyncThunk('/users/current', async () => {
-  return await getCurrentUser();
+export const currentUserThunk = createAsyncThunk('/users/current', async (_, thunkAPI) => {
+  // console.log(thunkAPI.getState())
+  return await getCurrentUser(thunkAPI.getState().login.token);
 });
