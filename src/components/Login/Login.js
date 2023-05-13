@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './Login.module.css';
-import { currentUserThunk, loginThunk } from 'redux/au/thunk';
+import { currentUserThunk, loginThunk } from 'redux/auth/thunk';
 import { selectisLogin } from 'redux/selectors';
 import { useEffect } from 'react';
 // import { useNavigate } from 'react-router-dom';
@@ -8,12 +8,13 @@ import { useEffect } from 'react';
 
 export default function Login() {
   const isLogin = useSelector(selectisLogin);
-  
-  console.log(isLogin);
+
+  // console.log(isLogin);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (isLogin) {
+      // currentUserThunk();
       dispatch(currentUserThunk());
     }
     // isLogin && dispatch(currentUserThunk());

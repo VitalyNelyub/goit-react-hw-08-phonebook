@@ -10,7 +10,6 @@ body {
   max-width: 1440px;
   background-color: rgb(46, 65, 174);
   margin: 0 auto;
-  border: 2px solid tomato;
 }
 
 code {

@@ -1,6 +1,7 @@
 .header {
   background-color: blue;
   padding: 20px;
+  box-shadow: 5px 5px 15px rgba(199, 55, 55, 0.753);
 }
 
 .headerList {

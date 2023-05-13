@@ -14,7 +14,7 @@ const hendleFulfilled = (state, action) => {
 };
 const hendleRejected = (state, action) => {
   state.isLoading = false;
-  state.error = action.payload.error;
+  state.error = action.payload;
 };
 const hendleCurrentUserFulfilled = (state, action) => {
   state.isLoading = false;
@@ -25,10 +25,11 @@ const hendleCurrentUserFulfilled = (state, action) => {
 const authSlice = createSlice({
   name: 'auth',
   initialState: initialStateBackend,
-  // reducers: {
-  //   logOut(state, action) {
-  //   state.user = null
-  // }},
+  reducers: {
+    logOut(state, action) {
+      state.user = null;
+    },
+  },
   extraReducers: builder =>
     builder
       .addCase(loginThunk.pending, hendlePending)
@@ -36,7 +37,8 @@ const authSlice = createSlice({
       .addCase(loginThunk.rejected, hendleRejected)
       .addCase(currentUserThunk.pending, hendlePending)
       .addCase(currentUserThunk.fulfilled, hendleCurrentUserFulfilled)
-      // .addCase(currentUserThunk.rejected, hendleRejected),
+      .addCase(currentUserThunk.rejected, hendleRejected),
 });
 
 export const authReducer = authSlice.reducer;
+export const { logOut } = authSlice.actions;
