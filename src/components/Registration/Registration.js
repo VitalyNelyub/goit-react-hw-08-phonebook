@@ -15,6 +15,7 @@ export default function Registration() {
     };
     createNewUser(newUser).then(response => {
       if (response.status === 201) navigate('/login');
+      
     });
     e.target.name.value = '';
     e.target.email.value = '';

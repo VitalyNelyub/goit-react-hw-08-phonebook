@@ -1,6 +1,5 @@
-
 import axios from 'axios';
-
+import { Notify } from 'notiflix';
 
 const axiosApi = axios.create({
   baseURL: 'https://connections-api.herokuapp.com',
@@ -17,6 +16,7 @@ export const removeToken = () => {
 export const createNewUser = async newUser => {
   const user = await axiosApi.post(`/users/signup`, newUser);
   addToken(user.data.token);
+  Notify.success('User created, pleasse LOG IN!');
   return user;
 };
 
@@ -33,6 +33,7 @@ export const getCurrentUser = async token => {
 export const loginUser = async user => {
   const loginedUser = await axiosApi.post(`/users/login`, user);
   addToken(loginedUser.data.token);
+  Notify.success('Welcome!');
   return loginedUser.data;
 };
 
