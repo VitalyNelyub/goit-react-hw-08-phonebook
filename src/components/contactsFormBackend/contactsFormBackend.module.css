@@ -10,3 +10,8 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.form__loader {
+  display: flex;
+  gap: 40px;
+}

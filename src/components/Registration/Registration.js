@@ -1,21 +1,9 @@
-// import {
-//   Button,
-//   FormControl,
-//   // FormHelperText,
-//   FormLabel,
-//   Input,
-//   InputGroup,
-//   InputRightElement,
-//   WrapItem,
-// } from '@chakra-ui/react';
 import React from 'react';
 import css from './Registration.module.css';
-// import { useDispatch } from 'react-redux';
 import { createNewUser } from 'service/fetchBackend';
 import { useNavigate } from 'react-router-dom';
 
 export default function Registration() {
-  // const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSubmitSignUp = e => {
@@ -28,11 +16,9 @@ export default function Registration() {
     createNewUser(newUser).then(response => {
       if (response.status === 201) navigate('/login');
     });
-    // dispatch(createNewUser(newUser));
     e.target.name.value = '';
     e.target.email.value = '';
     e.target.password.value = '';
-    // console.log(newUser);
   };
 
   return (

@@ -1,6 +1,5 @@
 import { Blocks } from 'react-loader-spinner';
 
-
 export default function loader() {
     return (
       <div>

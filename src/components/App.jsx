@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import Navigation from './NavBar/Navigation';
-import Registration from './Registration/Registration';
 import Login from './Login/Login';
-import Home from './Home/Home';
 import NotFound from './NotFound/NotFound';
 import ContactsFormBackend from './contactsFormBackend/contactFormBackend';
+import Home from './Home/Home';
+import Registration from './Registration/Registration';
 
 
 export default function App() {

@@ -1,5 +1,4 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-// import { contactsReducer as rootReducer } from '../redux/slice';
 import {
   persistStore,
   persistReducer,
@@ -14,11 +13,6 @@ import storage from 'redux-persist/lib/storage';
 import { contactsApi } from './reducer';
 import { authReducer } from './auth/slice';
 
-// const persistConfig = {
-//   key: 'contacts',
-//   storage,
-//   whitelist: ['contacts'],
-// };
 
 const persistConfig = {
   key: 'login',
@@ -33,7 +27,6 @@ const rootReducer = combineReducers({
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
