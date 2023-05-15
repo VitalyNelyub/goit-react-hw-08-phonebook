@@ -2,9 +2,12 @@ import React from 'react';
 import css from './Registration.module.css';
 import { createNewUser } from 'service/fetchBackend';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { loginThunk } from 'redux/auth/thunk';
 
 export default function Registration() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmitSignUp = e => {
     e.preventDefault();
@@ -14,8 +17,13 @@ export default function Registration() {
       password: e.target.password.value,
     };
     createNewUser(newUser).then(response => {
-      if (response.status === 201) navigate('/login');
-      
+      if (response.status === 201) {
+        navigate('/');
+        dispatch(
+          loginThunk({ email: newUser.email, password: newUser.password })
+        );
+        // dispatch(currentUserThunk());
+      }
     });
     e.target.name.value = '';
     e.target.email.value = '';

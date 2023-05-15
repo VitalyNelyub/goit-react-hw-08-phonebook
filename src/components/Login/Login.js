@@ -1,18 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import css from './Login.module.css';
-import { currentUserThunk, loginThunk } from 'redux/auth/thunk';
-import { selectisLogin } from 'redux/selectors';
-import { useEffect } from 'react';
+import {loginThunk } from 'redux/auth/thunk';
+// import { selectCurrentUser} from 'redux/selectors';
 
 
 export default function Login() {
-  const isLogin = useSelector(selectisLogin);
-
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(currentUserThunk());
-  }, [dispatch, isLogin]);
 
   const handleSubmitLogin = e => {
     e.preventDefault();
@@ -22,7 +16,6 @@ export default function Login() {
     };
 
     dispatch(loginThunk(loginCurrentUser));
-    dispatch(currentUserThunk());
     e.target.email.value = '';
     e.target.password.value = '';
   };

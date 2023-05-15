@@ -3,22 +3,27 @@ import css from './contactsFormBackend.module.css';
 import Filter from 'components/Filter/Filter';
 import ContactList from 'components/ContactsList/Conatcts';
 import { useSelector } from 'react-redux';
-import { selectLoader } from 'redux/selectors';
+import { selectLoader, selectisLogin } from 'redux/selectors';
 import Loader from '../Loader/Loader';
 
 export default function ContactsFormBackend() {
   const loader = useSelector(selectLoader);
+  const isLoged = useSelector(selectisLogin);
   return (
-    <div className={css.contactForm}>
-      <ContactForm />
-      <div className={css.form__loader}>
-      <h2>Contacts</h2>
-        {loader && <Loader />}
+    <>
+      {isLoged && (
+        <div className={css.contactForm}>
+          <ContactForm />
+          <div className={css.form__loader}>
+            <h2>Contacts</h2>
+            {loader && <Loader />}
+          </div>
+          <Filter />
+          <ul className={css.contactList}>
+            <ContactList />
+          </ul>
         </div>
-      <Filter />
-      <ul className={css.contactList}>
-        <ContactList />
-      </ul>
-    </div>
+      )}
+    </>
   );
 }

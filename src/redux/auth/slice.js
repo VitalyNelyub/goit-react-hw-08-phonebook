@@ -9,6 +9,7 @@ const hendlePending = (state, action) => {
 const hendleFulfilled = (state, action) => {
   state.isLoading = false;
   state.token = action.payload.token;
+  state.user = action.payload;
   state.error = '';
 };
 const hendleRejected = (state, action) => {

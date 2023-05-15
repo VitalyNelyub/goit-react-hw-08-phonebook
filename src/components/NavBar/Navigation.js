@@ -2,7 +2,7 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import css from './Navigation.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCurrentUser } from 'redux/selectors';
+import {selectisLogin } from 'redux/selectors';
 import { useEffect } from 'react';
 import { currentUserThunk } from 'redux/auth/thunk';
 import { logOut } from 'redux/auth/slice';
@@ -10,7 +10,7 @@ import UserMenu from 'components/UserMenu/UserMenu';
 
 export default function Navigation() {
   const navigate = useNavigate();
-  const authUserName = useSelector(selectCurrentUser);
+  const authUserName = useSelector(selectisLogin);
 
   const dispatch = useDispatch();
 
@@ -21,7 +21,7 @@ export default function Navigation() {
   useEffect(() => {
     if (authUserName) {
       currentUserThunk();
-      navigate('/contacts');
+      // navigate('/contacts');
     }
   }, [authUserName, navigate]);
 
