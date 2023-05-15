@@ -14,10 +14,14 @@ export const removeToken = () => {
 };
 
 export const createNewUser = async newUser => {
-  const user = await axiosApi.post(`/users/signup`, newUser);
-  addToken(user.data.token);
-  Notify.success('User created, pleasse LOG IN!');
-  return user;
+  try {
+    const user = await axiosApi.post(`/users/signup`, newUser);
+    addToken(user.data.token);
+    Notify.success('User created!');
+    return user;
+  } catch (error) {
+    Notify.warning('Error');
+  }
 };
 
 export const getCurrentUser = async token => {
@@ -31,10 +35,14 @@ export const getCurrentUser = async token => {
 };
 
 export const loginUser = async user => {
-  const loginedUser = await axiosApi.post(`/users/login`, user);
-  addToken(loginedUser.data.token);
-  Notify.success('Welcome!');
-  return loginedUser.data;
+  try {
+    const loginedUser = await axiosApi.post(`/users/login`, user);
+    addToken(loginedUser.data.token);
+    Notify.success('Welcome!');
+    return loginedUser.data;
+  } catch (error) {
+    Notify.warning('Error');
+  }
 };
 
 export const logOut = async user => {

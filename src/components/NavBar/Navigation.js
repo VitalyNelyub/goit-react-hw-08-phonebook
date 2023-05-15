@@ -21,7 +21,6 @@ export default function Navigation() {
   useEffect(() => {
     if (authUserName) {
       currentUserThunk();
-      // navigate('/contacts');
     }
   }, [authUserName, navigate]);
 
@@ -29,11 +28,11 @@ export default function Navigation() {
     <div>
       <header className={css.header}>
         <nav className={css.headerList}>
-          {!authUserName && (
+          {
             <NavLink className={css.headerLink} to="/">
               Home
             </NavLink>
-          )}
+          }
           {!authUserName && (
             <NavLink className={css.headerLink} to="/register">
               Registration

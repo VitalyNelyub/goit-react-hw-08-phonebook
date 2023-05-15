@@ -1,12 +1,12 @@
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import css from './Login.module.css';
-import {loginThunk } from 'redux/auth/thunk';
+import { loginThunk } from 'redux/auth/thunk';
+import { useNavigate } from 'react-router-dom';
 // import { selectCurrentUser} from 'redux/selectors';
-
 
 export default function Login() {
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
 
   const handleSubmitLogin = e => {
     e.preventDefault();
@@ -16,6 +16,7 @@ export default function Login() {
     };
 
     dispatch(loginThunk(loginCurrentUser));
+    navigate('/');
     e.target.email.value = '';
     e.target.password.value = '';
   };
