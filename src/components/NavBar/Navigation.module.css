@@ -13,11 +13,12 @@
   font-size: 22px;
   text-decoration: none;
   color: aliceblue;
+  transition: all 250ms;
+  border-radius: 12px;
+  transition: all 250ms;
 }
 
-/* .active {
-  color: rgb(238, 11, 11);
-  font-size: 48px;
-  font-weight: 700;
-  text-decoration: underline;
-} */
+.headerLink:hover {
+  transform: scale(1.1);
+  box-shadow: 10px 15px 5px rgba(86, 84, 84, 0.56);
+}
