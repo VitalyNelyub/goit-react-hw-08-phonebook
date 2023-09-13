@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-08-phonebook/static/css/main.0c7189ff.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.d95ddedc.js",
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.8d07d6da.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.c4dc9e53.js",
+    "static/media/game-phone.gif": "/goit-react-hw-08-phonebook/static/media/game-phone.cdd816256883d8c92d9d.gif",
+    "static/media/phone.gif": "/goit-react-hw-08-phonebook/static/media/phone.4aafe306b432dd72e577.gif",
+    "static/media/exit.gif": "/goit-react-hw-08-phonebook/static/media/exit.ccb10e9f8166022d9d5a.gif",
+    "static/media/verisure-house.gif": "/goit-react-hw-08-phonebook/static/media/verisure-house.bf1b4c4cc16230e44fdd.gif",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.0c7189ff.css.map": "/goit-react-hw-08-phonebook/static/css/main.0c7189ff.css.map",
-    "main.d95ddedc.js.map": "/goit-react-hw-08-phonebook/static/js/main.d95ddedc.js.map"
+    "main.8d07d6da.css.map": "/goit-react-hw-08-phonebook/static/css/main.8d07d6da.css.map",
+    "main.c4dc9e53.js.map": "/goit-react-hw-08-phonebook/static/js/main.c4dc9e53.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c7189ff.css",
-    "static/js/main.d95ddedc.js"
+    "static/css/main.8d07d6da.css",
+    "static/js/main.c4dc9e53.js"
   ]
 }
