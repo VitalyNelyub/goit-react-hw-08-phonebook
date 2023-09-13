@@ -22,7 +22,6 @@ export default function Registration() {
         dispatch(
           loginThunk({ email: newUser.email, password: newUser.password })
         );
-        // dispatch(currentUserThunk());
       }
     });
     e.target.name.value = '';
@@ -68,7 +67,6 @@ export default function Registration() {
           required
         />
       </label>
-      {/* <Button colorScheme="whatsapp">Whatsapp</Button> */}
       <button type="submit" className={css.registrationFormBtn}>
         Sign up
       </button>
@@ -76,51 +74,3 @@ export default function Registration() {
   );
 }
 
-// export default function Registration() {
-//   const [show, setShow] = React.useState(false);
-//   const handleClick = () => setShow(!show);
-
-//   const reset = () => {}
-
-//   return (
-//     <FormControl width={500}>
-//       <FormLabel>
-//         Name
-//         <Input type="text" variant="filled" id="1" />
-//       </FormLabel>
-//       <FormLabel>
-//         Email address
-//         <Input type="email" variant="filled" />
-//       </FormLabel>
-//       <FormLabel>Password
-//       <InputGroup size="md">
-//         <Input
-//           pr="4.5rem"
-//           type={show ? 'text' : 'password'}
-//           placeholder="Enter password"
-//           variant="filled"
-//           id="2"
-//         />
-//         <InputRightElement width="4.5rem">
-//           <Button h="1.75rem" size="sm" onClick={handleClick}>
-//             {show ? 'Hide' : 'Show'}
-//           </Button>
-//         </InputRightElement>
-//         </InputGroup>
-//         </FormLabel>
-//       <WrapItem>
-//         <Button
-//           colorScheme="whatsapp"
-//           type="submit"
-//           mt={10}
-//           mr={'auto'}
-//           ml={'auto'}
-//           width={150}
-//           onClick={() => reset}
-//         >
-//           Gray
-//         </Button>
-//       </WrapItem>
-//     </FormControl>
-//   );
-// }

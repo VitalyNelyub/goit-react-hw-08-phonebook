@@ -14,7 +14,7 @@
 .form__title,
 h2 {
   font-size: 34px;
-  color: rgb(116, 135, 201);
+  color: rgb(141, 194, 17);
 }
 
 .form {
@@ -23,13 +23,15 @@ h2 {
   row-gap: 20px;
   width: 400px;
   justify-content: baseline;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .form__btn {
   width: 200px;
   font-weight: 600;
   padding: 6px;
-  background-color: rgb(109, 109, 223);
+  background-color: rgb(19, 150, 232);
   border-radius: 14px;
   transition: all 250ms;
   cursor: pointer;
@@ -38,7 +40,6 @@ h2 {
 .form__btn:hover {
   transform: scale(1.1);
   box-shadow: 10px 15px 5px rgba(86, 84, 84, 0.56);
-  
 }
 
 .form__input {
@@ -47,19 +48,19 @@ h2 {
   width: 300px;
   display: flex;
   background-color: transparent;
-  border: 2px solid rgb(116, 135, 201);
+  border: 2px solid rgb(19, 150, 232);
   border-radius: 4px;
-  color: #fff;
+  color: rgb(165, 160, 160);
   outline: none;
   cursor: pointer;
 }
 
 .form__input:focus {
-  border: 2px solid rgb(226, 88, 64);
+  border: 2px solid rgb(141, 194, 17);
 }
 
 label {
-  color: rgb(40, 185, 185);
+  color: rgb(141, 194, 17);
 }
 
 .form__loader {

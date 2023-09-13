@@ -14,7 +14,7 @@ export default function Filter() {
   return (
     <div className={css.filter}>
       <label className={css.filter__title}>
-        Find contacts by name
+        Find contact by name
         <input
           type="text"
           name="filter"

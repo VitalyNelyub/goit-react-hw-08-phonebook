@@ -1,7 +1,17 @@
 .header {
-  background-color: blue;
-  padding: 20px;
-  box-shadow: 5px 5px 15px rgba(199, 55, 55, 0.753);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(29, 39, 71, 0.8);
+  padding: 20px 40px;
+  box-shadow: 5px 5px 15px rgba(218, 207, 207, 0.753);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  z-index: 1;
 }
 
 .headerList {
@@ -12,13 +22,16 @@
 .headerLink {
   font-size: 22px;
   text-decoration: none;
-  color: aliceblue;
+  color: rgb(141, 194, 17);
   transition: all 250ms;
-  border-radius: 12px;
-  transition: all 250ms;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* padding: 4px; */
 }
 
 .headerLink:hover {
-  transform: scale(1.1);
-  box-shadow: 10px 15px 5px rgba(86, 84, 84, 0.56);
+  color: rgb(228, 142, 13);
+  border-radius: 0;
+  box-shadow: 0 5px 0 rgba(228, 142, 13); 
 }

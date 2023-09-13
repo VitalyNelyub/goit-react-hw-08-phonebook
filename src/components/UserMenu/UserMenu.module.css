@@ -1,7 +1,33 @@
-.userTitle {
-    font-size: 22px;
-    font-weight: 700;
-    font-style: italic;
-    color: rgb(40, 185, 185);
-    text-decoration-line: underline;
+.userSignup {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
+
+.userTitle {
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  color: rgb(19, 150, 232);
+  margin: 0;
+}
+
+.headerLinkExit {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgb(141, 194, 17);
+  transition: all 250ms;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 250ms;
+  /* padding: 4px; */
+}
+
+.headerLinkExit:hover {
+  transform: scale(1.1);
+}
+
+/* .userIcon {
+    fill: black;
+} */

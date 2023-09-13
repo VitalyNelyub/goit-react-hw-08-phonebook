@@ -1,22 +1,23 @@
 // import { Suspense } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import css from './Navigation.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import {selectisLogin } from 'redux/selectors';
+import { useSelector } from 'react-redux';
+import { selectisLogin } from 'redux/selectors';
 import { useEffect } from 'react';
 import { currentUserThunk } from 'redux/auth/thunk';
-import { logOut } from 'redux/auth/slice';
 import UserMenu from 'components/UserMenu/UserMenu';
+import animatedGif from '../images/game-phone.gif';
+import animatedGifHome from '../images/verisure-house.gif';
 
 export default function Navigation() {
   const navigate = useNavigate();
   const authUserName = useSelector(selectisLogin);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const handleLogOut = () => {
-    dispatch(logOut());
-  };
+  // const handleLogOut = () => {
+  //   dispatch(logOut());
+  // };
 
   useEffect(() => {
     if (authUserName) {
@@ -25,12 +26,18 @@ export default function Navigation() {
   }, [authUserName, navigate]);
 
   return (
-    <div>
+    <div className={css.navigation}>
       <header className={css.header}>
         <nav className={css.headerList}>
           {
             <NavLink className={css.headerLink} to="/">
-              Home
+              Home{' '}
+              <img
+                src={animatedGifHome}
+                alt="Анимированная GIF"
+                height={30}
+                width={30}
+              />
             </NavLink>
           }
           {!authUserName && (
@@ -43,22 +50,21 @@ export default function Navigation() {
               Login
             </NavLink>
           ) : (
-            <NavLink
-              className={css.headerLink}
-              onClick={handleLogOut}
-              to="/login"
-            >
-              Log out
-            </NavLink>
+            ''
           )}
           {authUserName && (
             <NavLink className={css.headerLink} to="/contacts">
               Contacts
+              <img
+                src={animatedGif}
+                alt="Анимированная GIF"
+                height={50}
+                width={50}
+              />
             </NavLink>
           )}
         </nav>
-        {/* {authUserName && <h4>Hello, {authUserName.name}</h4>} */}
-         {authUserName && <UserMenu/>}
+        {authUserName && <UserMenu />}
       </header>
       <main>
         <Outlet />

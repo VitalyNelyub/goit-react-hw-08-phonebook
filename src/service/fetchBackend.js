@@ -20,7 +20,8 @@ export const createNewUser = async newUser => {
     Notify.success('User created!');
     return user;
   } catch (error) {
-    Notify.warning('Error');
+    console.log(error)
+    Notify.warning('Error, try again');
   }
 };
 
