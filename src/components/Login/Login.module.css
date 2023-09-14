@@ -3,22 +3,24 @@
   display: flex;
   gap: 30px;
   flex-direction: column;
-  /* border: 2px solid grey; */
   border-radius: 12px;
   margin: 0 auto;
   align-items: center;
   padding: 30px;
-  background-color: rgba(91, 129, 162, 0.599);
+  background-color: rgba(29, 39, 71, 0.599);
   margin-top: 60px;
   margin-bottom: 60px;
-  box-shadow: 5px 5px 15px rgba(199, 55, 55, 0.753);
+    box-shadow: 
+  5px 5px 15px rgba(218, 207, 207, 0.753),
+  -5px -5px 15px rgba(218, 207, 207, 0.753),
+  -5px 5px 15px rgba(218, 207, 207, 0.753),
+  5px -5px 15px rgba(218, 207, 207, 0.753);
 }
 
 .loginFormLabel {
   display: flex;
   gap: 10px;
-  flex-direction: column;
-  
+  flex-direction: column;  
 }
 
 .loginFormInput {
@@ -27,25 +29,30 @@
   width: 400px;
   display: flex;
   background-color: transparent;
-  border: 2px solid rgb(116, 135, 201);
+  border: 2px solid rgb(19, 150, 232);
   border-radius: 4px;
-  color: #fff;
+  color: rgb(165, 160, 160);
   outline: none;
   cursor: pointer;
 }
 
+.loginFormInput:focus {
+  border: 2px solid rgb(141, 194, 17);
+}
+
 .loginFormBtn {
-  width: 200px;
+  font-size: 16px;
   font-weight: 600;
-  padding: 6px;
-  background-color: rgb(109, 109, 223);
-  border-radius: 14px;
+  padding: 8px 42px;
+  background-color: rgb(19, 150, 232);
+  border: none;
+  border-radius: 12px;
   transition: all 250ms;
   cursor: pointer;
 }
 
 .loginFormBtn:hover {
   transform: scale(1.1);
-  color: lime;
-  box-shadow: 10px 15px 5px rgba(86, 84, 84, 0.56);
+  color: rgb(141, 194, 17);
+  box-shadow: 5px 5px 15px rgba(218, 207, 207, 0.753);
 }
